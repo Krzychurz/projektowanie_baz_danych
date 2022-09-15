@@ -16,3 +16,11 @@ SELECT id,name,starting_generator_power,max_generator_power,max_cannons,max_syst
 SELECT spaceships_id,canons_id,drone_types_id,crewmembers_id FROM `spaceship_has_utilities`
 -- dla tabeli "spaceship_has_utilities"
 
+SELECT * FROM `crewmembers` JOIN race ON race_id = race.id
+-- ukazuje dane z tabel "crewmembers" i "race"
+
+SELECT * FROM `spaceship_has_utilities` JOIN spaceships ON spaceships_id = spaceships.id
+JOIN canons ON canons_id = canons.id
+JOIN drone_types ON drone_types_id = drone_types.id
+JOIN crewmembers ON crewmembers_id = crewmembers.id;
+-- łączy wszystkie dane z kluczy obcych w jedną tabele
