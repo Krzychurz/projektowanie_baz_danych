@@ -19,8 +19,5 @@ SELECT spaceships_id,canons_id,drone_types_id,crewmembers_id FROM `spaceship_has
 SELECT * FROM `crewmembers` JOIN race ON race_id = race.id
 -- ukazuje dane z tabel "crewmembers" i "race"
 
-SELECT * FROM `spaceship_has_utilities` JOIN spaceships ON spaceships_id = spaceships.id
-JOIN canons ON canons_id = canons.id
-JOIN drone_types ON drone_types_id = drone_types.id
-JOIN crewmembers ON crewmembers_id = crewmembers.id;
--- łączy wszystkie dane z kluczy obcych w jedną tabele
+SELECT spaceships.name,spaceships.starting_generator_power,spaceships.max_generator_power,spaceships.max_generator_power,spaceships.max_canons,spaceships.max_systems,canons.name,canons.firerate,canons.dmg,canons.is_artilery FROM `spaceships_has_canons` JOIN spaceships ON spaceships_id=spaceships.id JOIN canons ON canons_id=canons.id;
+-- łączy wszystkie dane poza "id" z tabel "spaceships" i "canons" w powiązaniu wiele-do-wielu
